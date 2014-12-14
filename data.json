@@ -1,0 +1,12 @@
+{
+  "Marca temporal":["2014/12/09 4:46:54 p. m. CET","2014/12/10 9:22:10 a. m. CET","2014/12/10 3:08:35 p. m. CET","2014/12/12 1:34:13 p. m. CET","2014/12/13 11:27:54 a. m. CET","2014/12/13 9:28:41 p. m. CET","2014/12/13 9:30:49 p. m. CET","2014/12/14 12:59:43 a. m. CET","2014/12/14 4:29:06 p. m. CET"],
+  "Where are you from?":["Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe"],
+  "How old are you?":["0-20","21-40","21-40","0-20","0-20","21-40","21-40","21-40","0-20"],
+  "Man or Woman?":["Men","Men","Man","Man","Woman","Man","Man","Man","Woman"],
+  "How would you classify your mind?":["Artistic","Cientific","Artistic","Artistic","Artistic","Artistic","Scientific","Scientific","Artistic"],
+  "Guess 1":[456,400,1500,700,500,547,300,800,270],
+  "Guess 2":[234,100,300,400,180,103,150,600,160],
+  "Guess 3":[132,50,200,300,110,94,120,200,130],
+  "Guess 4":[567,400,800,650,700,477,380,900,330],
+  "Guess 5":[978,500,1500,1000,1000,683,800,1100,650],
+}

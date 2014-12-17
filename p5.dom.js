@@ -1,4 +1,4 @@
-/*! p5.dom.js v0.1.7 November 23, 2014 */
+/*! p5.dom.js v0.1.4 September 11, 2014 */
 /**
  * <p>The web is much more than just canvas and p5.dom makes it easy to interact 
  * with other HTML5 objects, including text, hyperlink, image, input, video, 
@@ -43,7 +43,7 @@ var p5DOM = (function(){
   p5.prototype.getElement = function (e) {
     var res = document.getElementById(e);
     if (res) {
-      return wrapElement(res);
+      return new p5.Element(res);
     } else {
       return null;
     }
@@ -63,23 +63,12 @@ var p5DOM = (function(){
     var res = document.getElementsByClassName(e);
     if (res) {
       for (var j = 0; j < res.length; j++) {
-        var obj = wrapElement(res);
+        var obj = new p5.Element(res[j]);
         arr.push(obj);
       }
     }
     return arr;
   };
-
-  /**
-   * Helper function for getElement and getElements.
-   */
-  function wrapElement(elt) {
-    if (elt.tagName === "VIDEO" || elt.tagName === "AUDIO") {
-      return new p5.MediaElement(elt);
-    } else {
-      return new p5.Element(elt);
-    }
-  }
 
   /**
    * Removes all elements created by p5, except any canvas / graphics
@@ -156,7 +145,7 @@ var p5DOM = (function(){
     var method = 'create' + tag.charAt(0).toUpperCase() + tag.slice(1);
     p5.prototype[method] = function(html) {
       var elt = document.createElement(tag);
-      elt.innerHTML = typeof html === undefined ? "" : html;
+      elt.innerHTML = html;
       return addElement(elt, this);
     }
   });
@@ -391,9 +380,7 @@ var p5DOM = (function(){
     } else {
       throw 'getUserMedia not supported in this browser';
     }
-    var c = addElement(elt, this, true);
-    c.loadedmetadata = true;
-    return c;
+    return addElement(elt, this);
   };
 
   /**
@@ -568,7 +555,7 @@ var p5DOM = (function(){
           this.elt.style[parts[0].trim()] = parts[1].trim();
         }
       }
-      // console.log(this.elt.style)
+      console.log(this.elt.style)
     } else {
       this.elt.style[prop] = val;
     }
@@ -685,8 +672,6 @@ var p5DOM = (function(){
       } else {
         this.elt.style.width = aW+'px';
         this.elt.style.height = aH+'px';
-        this.elt.width = aW;
-        this.elt.height = aH;
       }
       this.width = this.elt.offsetWidth;
       this.height = this.elt.offsetHeight;

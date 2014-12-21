@@ -363,6 +363,8 @@ function setup() {
   noStroke();
   noSmooth();
 
+  
+
   for (var i =0; i <= people-1; i++){// getting Average guess1 and pixel
     tempGuess1Stat += guess1[i];
     }
@@ -1723,6 +1725,7 @@ if(mouseX - modWidth >= buttonX && mouseX - modWidth <= buttonX + thick){
     }
     else if ( mouseY - modHeight >= 650  && mouseY - modHeight <= 650  + thick  ){
       infoButton = 1;
+      save(guess1, 'my.txt');
     }
 
 }

@@ -14,7 +14,7 @@ var colorRect = 1
 var count =0
 var infoButton =1;
 
-
+var GInd = 1
 
 var contSimp = []
 var ageSimp = []
@@ -861,7 +861,7 @@ function draw(){
     colorRect= 1
   }
 
-  background(0);
+  background(100);
 
 
 
@@ -923,20 +923,14 @@ function draw(){
   textAlign(RIGHT)
   textSize(13);
   textFont("Verdana");
-  fill(187,187,187)
-  text("Residence",40,70)
-  fill(204,204,204)
-  text("Age",40,210)
+  fill(255)
+  text("RESIDENCE",40,70)
+  text("AGE",40,210)
+  text("GENDER",40,310)
+  text("MIND",40,390)
 
-  fill(221,221,221)
-
-  text("Gender",40,310)
-
-  fill(238,238,238)
-  text("Mind",40,390)
-
-
-  if (colorRect ===1){
+fill(240)
+/*if (colorRect ===1){
     fill(242,103,33)
   }
   if (colorRect ===2){
@@ -947,7 +941,7 @@ function draw(){
   }
   if (colorRect === 4){
     fill(0,212,207)
-  }
+  }*/
 
   text("Total",60,490)
 
@@ -957,7 +951,7 @@ function draw(){
   text("Guess4",60,590)
   text("Guess5",60,610)
 
-  //translate(0,-2)
+  /*//translate(0,-2)
   textSize(12);
   if (colorRect ===1){
     fill(131,21,24)
@@ -970,7 +964,7 @@ function draw(){
   }
   if (colorRect ===3){
     fill(0,103,12)
-  }
+  }*/
   text("Europe",60,90)
   text("North America",60,110)
   text("South America",60,130)
@@ -978,7 +972,7 @@ function draw(){
   text("Africa",60,170)
   text("Australia",60,190)
 
-  if (colorRect ===1){
+  /*if (colorRect ===1){
     fill(160,28,32)
   }
   if (colorRect ===2){
@@ -989,7 +983,7 @@ function draw(){
   }
   if (colorRect ===3){
     fill(29,156,0)
-  }
+  }*/
 
 
   text("0-20",60,230)
@@ -997,7 +991,7 @@ function draw(){
   text("41-60",60,270)
   text("60+",60,290)
 
-  if (colorRect ===1){
+  /*if (colorRect ===1){
     fill(189,52,38)
   }
   if (colorRect ===2){
@@ -1008,13 +1002,13 @@ function draw(){
   }
   if (colorRect ===4){
     fill(64,191,0)
-  }
+  }*/
 
   text("Man",60,330)
   text("Woman",60,350)
   text("Other",60,370)
 
-  if (colorRect ===1){
+  /*if (colorRect ===1){
     fill(217,69,38)
   }
   if (colorRect ===2){
@@ -1026,26 +1020,36 @@ function draw(){
   }
   if (colorRect ===4){
     fill(109,223,0)
-  }
+  }*/
 
   text("Scientific",60,410)
   text("Artistic",60,430)
   pop()
-
-  fill(156,155,155)
+  fill(255,50)
   rect(buttonX,70,thick,thick);
-  fill(187,187,187)
   rect(buttonX,210,thick,thick);
-  fill(204,204,204)
   rect(buttonX,310,thick,thick);
-  fill(221)
   rect(buttonX,390,thick,thick);
-  fill(255,20)
-  rect(buttonX + 60,90 , 30,532)
-  rect(buttonX + 120,90 , 30,532)
-  rect(buttonX + 180,90 , 30,532)
-  rect(buttonX + 240,90 , 30,532)
-  rect(buttonX + 300,90 , 30,532)
+
+  for(i = 0; i <=15; i++){
+    fill(255,5+5*i)
+    rect(buttonX+30 + (i*20),85 ,8,542)
+  }
+  for(i = 30; i >=16; i--){
+    fill(255,155 -5*i)
+    rect(buttonX+30 + (i*20),85 ,8,542)
+  }
+  fill(255,50)
+  rect(buttonX+30 + 300,85 ,8,542)
+
+
+
+
+  /*rect(buttonX + 30,90 , 30,532)
+  rect(buttonX + 90,90 , 30,532)
+  rect(buttonX + 150,90 , 30,532)
+  rect(buttonX + 210,90 , 30,532)
+  rect(buttonX + 270,90 , 30,532)*/
 
 
 
@@ -1078,6 +1082,9 @@ function draw(){
   rect(buttonX,170,thick,thick);
   rect(buttonX,190,thick,thick);
 
+
+
+
   if (colorRect ===1){
     fill(160,28,32)
   }
@@ -1088,19 +1095,18 @@ function draw(){
     fill(29,156,0)
   }
 
-
-
-  //rect(100,210,450,thick);
   rect(100,230,printO,thick);
   rect(100,250,printSI,thick);
   rect(100,270,printAI,thick);
   rect(100,290,printGI,thick);
 
-
   rect(buttonX,230,thick,thick);
   rect(buttonX,250,thick,thick);
   rect(buttonX,270,thick,thick);
   rect(buttonX,290,thick,thick);
+
+
+
 
   if (colorRect ===1){
     fill(189,52,38)
@@ -1112,18 +1118,15 @@ function draw(){
     fill(64,191,0)
   }
 
-
-
-
-  //rect(100,310,450,thick);
   rect(100,330,printMan,thick);
   rect(100,350,printWoman,thick);
   rect(100,370,printOther,thick);
 
-
   rect(buttonX,330,thick,thick);
   rect(buttonX,350,thick,thick);
   rect(buttonX,370,thick,thick);
+
+
 
   if (colorRect ===1){
     fill(217,69,38)
@@ -1134,14 +1137,15 @@ function draw(){
   if (colorRect ===3){
     fill(109,223,0)
   }
-  //rect(100,390,450,thick);
-  rect(100,410,printScientific,thick);
-  rect(100,430,printArtistic,thick);
 
-
+  rect(100,410,printArtistic,thick);
+  rect(100,430,printScientific,thick);
 
   rect(buttonX,410,thick,thick);
   rect(buttonX,430,thick,thick);
+
+
+
 
   if (colorRect ===1){
     fill(242,103,33)
@@ -1154,8 +1158,8 @@ function draw(){
   }
 
   rect(100,490,printTotal,thick);
-  rect(buttonX,490,thick,thick);
 
+  rect(buttonX,490,thick,thick);
 
 
 
@@ -1172,6 +1176,69 @@ function draw(){
   rect(buttonX,570,thick,thick);
   rect(buttonX,590,thick,thick);
   rect(buttonX,610,thick,thick);
+
+  fill(0,100)
+
+  rect(100,90+thick,printEurope,GInd);
+  rect(100,110+thick,printNAmerica,GInd);
+  rect(100,130+thick,printSAmerica,GInd);
+  rect(100,150+thick,printAsia,GInd);
+  rect(100,170+thick,printAfrica,GInd);
+  rect(100,190+thick,printAustralia,GInd);
+
+  rect(100,230+thick,printO,GInd);
+  rect(100,250+thick,printSI,GInd);
+  rect(100,270+thick,printAI,GInd);
+  rect(100,290+thick,printGI,GInd);
+
+  rect(100,330+thick,printMan,GInd);
+  rect(100,350+thick,printWoman,GInd);
+  rect(100,370+thick,printOther,GInd);
+
+  rect(100,410+thick,printArtistic,GInd);
+  rect(100,430+thick,printScientific,GInd);
+
+  rect(100,490+thick,printTotal,GInd);
+
+  rect(100,530+thick,printG1,GInd);
+  rect(100,550+thick,printG2,GInd);
+  rect(100,570+thick,printG3,GInd);
+  rect(100,590+thick,printG4,GInd);
+  rect(100,610+thick,printG5,GInd);
+
+
+  fill(0,30)
+
+  rect(100,90+thick+GInd,printEurope,GInd);
+  rect(100,110+thick+GInd,printNAmerica,GInd);
+  rect(100,130+thick+GInd,printSAmerica,GInd);
+  rect(100,150+thick+GInd,printAsia,GInd);
+  rect(100,170+thick+GInd,printAfrica,GInd);
+  rect(100,190+thick+GInd,printAustralia,GInd);
+
+  rect(100,230+thick+GInd,printO,GInd);
+  rect(100,250+thick+GInd,printSI,GInd);
+  rect(100,270+thick+GInd,printAI,GInd);
+  rect(100,290+thick+GInd,printGI,GInd);
+
+  rect(100,330+thick+GInd,printMan,GInd);
+  rect(100,350+thick+GInd,printWoman,GInd);
+  rect(100,370+thick+GInd,printOther,GInd);
+
+  rect(100,410+thick+GInd,printArtistic,GInd);
+  rect(100,430+thick+GInd,printScientific,GInd);
+
+  rect(100,490+thick+GInd,printTotal,GInd);
+
+  rect(100,530+thick+GInd,printG1,GInd);
+  rect(100,550+thick+GInd,printG2,GInd);
+  rect(100,570+thick+GInd,printG3,GInd);
+  rect(100,590+thick+GInd,printG4,GInd);
+  rect(100,610+thick+GInd,printG5,GInd);
+
+
+
+
 
 
   if (colorRect ===1){
@@ -1575,27 +1642,40 @@ function draw(){
   }
 
   textSize(8)
+  fill(255,100)
+  triangle(buttonX+334,630,buttonX + 339,635,buttonX +329,635)
+  triangle(buttonX+30,630,buttonX + 35,635,buttonX +25,635)
+  triangle(buttonX+630,630,buttonX + 635,635,buttonX +625,635)
+
   fill(255,200)
-  text("100", buttonX+330, 630)
-  text("50", buttonX+180, 630)
-  text("0", buttonX+30, 630)
-  textSize(7)
-  fill(255,150)
-  text("10", buttonX+60, 630)
-  text("20", buttonX+90, 630)
-  text("30", buttonX+120, 630)
-  text("40", buttonX+150, 630)
-  text("60", buttonX+210, 630)
-  text("70", buttonX+240, 630)
-  text("80", buttonX+270, 630)
-  text("90", buttonX+300, 630)
+  text("PERFECT GUESS", buttonX+300, 645)
+  text("LOW GUESS", buttonX+30, 645)
+  text("HIGH GUESS", buttonX+580, 645)
+
+  stroke(0,10)
+  line( buttonX+33,626, buttonX+638,626)
+  line( buttonX+32,626, buttonX+32,86)
+  line( buttonX+33,86, buttonX+638,86)
+  stroke(0,30)
+  line( buttonX+32,627, buttonX+638,627)
+  line( buttonX+31,627, buttonX+31,85)
+  line( buttonX+32,85, buttonX+638,85)
+  stroke(0,100)
+  line( buttonX+31,628, buttonX+638,628)
+  line( buttonX+30,628, buttonX+30,84)
+  line( buttonX+31,84, buttonX+638,84)
+  stroke(255,100)
+  line( buttonX+638,84, buttonX+638,628)
+
+  noStroke()
+
 
 
   if (infoButton === 1){
     push()
     translate(400,0)
     fill(0,200)
-    rect(-800,0,window.innerWidth, window.innerHeight)
+    rect(-815,0,window.outerWidth, window.outerHeight)
     fill(255)
     textSize(15)
     textStyle(BOLD)

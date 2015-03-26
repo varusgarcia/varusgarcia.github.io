@@ -1,14 +1,14 @@
 
-var cont = ["Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","South America","Europe","Europe" , "Europe", "Europe"];
-var age = ["0-20","21-40","21-40","0-20","0-20","21-40","21-40","21-40","0-20","21-40","21-40","0-20","41-60","21-40","0-20","21-40","21-40","21-40","0-20","0-20", "0-20", "21-40"];
-var sex = ["Man","Man","Man","Man","Woman","Man","Man","Man","Woman","Man","Man","Man","Woman","Man","Man","Man","Man","Man","Man","Man","Man","Man"];
-var mind =["Artistic","Cientific","Artistic","Artistic","Artistic","Artistic","Scientific","Scientific","Artistic","Artistic","Scientific","Scientific","Artistic","Artistic","Artistic","Artistic","Artistic","Artistic","Scientific","Scientific","Artistic","Scientific"];
-var guess1 =[456,400,1500,700,500,547,300,800,270,600,400,750,650,3000,100,400,260,250,609,1500,500,550];
-var guess2 =[234,100,300,400,180,103,150,600,160,300,200,250,500,1000,75,100,130,100,326,800,200,220];
-var guess3 =[132,50,200,300,110,94,120,200,130,150,150,150,200,500,50,80,130,75,278,500,150,200];
-var guess4 =[567,400,800,650,700,477,380,900,330,450,320,950,600,2000,110,200,300,120,569,1300,250,500];
-var guess5 =[978,500,1500,1000,1000,683,800,1100,650,750,600,1800,1000,5000,175,500,500,350,1346,2000,600,1001];
-var people = 22;
+var cont = ["Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","South America","Europe","Europe" , "Europe", "Europe", "North America", "Asia", "Africa", "Australia"];
+var age = ["0-20","21-40","21-40","0-20","0-20","21-40","21-40","21-40","0-20","21-40","21-40","0-20","41-60","21-40","0-20","21-40","21-40","21-40","0-20","0-20", "0-20", "21-40", "60+", "60+", "41-60", "21-40"];
+var sex = ["Man","Man","Man","Man","Woman","Man","Man","Man","Woman","Man","Man","Man","Woman","Man","Man","Man","Man","Man","Man","Man","Man","Man", "Other", "Other", "Man", "Woman"];
+var mind =["Artistic","Cientific","Artistic","Artistic","Artistic","Artistic","Scientific","Scientific","Artistic","Artistic","Scientific","Scientific","Artistic","Artistic","Artistic","Artistic","Artistic","Artistic","Scientific","Scientific","Artistic","Scientific", "Scientific","Artistic","Scientific","Artistic"];
+var guess1 =[456,400,1500,700,500,547,300,800,270,600,400,750,650,3000,100,400,260,250,609,1500,500,550,750,800,900,300];
+var guess2 =[234,100,300,400,180,103,150,600,160,300,200,250,500,1000,75,100,130,100,326,800,200,220,300,300,100,245];
+var guess3 =[132,50,200,300,110,94,120,200,130,150,150,150,200,500,50,80,130,75,278,500,150,200,200,350,50,200];
+var guess4 =[567,400,800,650,700,477,380,900,330,450,320,950,600,2000,110,200,300,120,569,1300,250,500,400,500,200,500];
+var guess5 =[978,500,1500,1000,1000,683,800,1100,650,750,600,1800,1000,5000,175,500,500,350,1346,2000,600,1001,1000,3000,400,1000];
+var people = 26;
 
 var colorRect = 1
 var count =0
@@ -421,11 +421,15 @@ var tempPrintScientific = 0;
 
 
 
+
+
+
+
 var thick =12;
 
 function setup() {
 
-  createCanvas(window.innerWidth-20, window.innerHeight-20);
+  createCanvas(window.innerWidth-15, window.innerHeight-15);
   noStroke();
   noSmooth();
 
@@ -517,7 +521,7 @@ function setup() {
     }
   }
 
-  for(var i = 0; i<= people-1; i ++){ ///CONT Europe
+  for(var i = 0; i<= people-1; i ++){
 
     if(contSimp[i] ===1){
       tempEuropeG1 += guess1[i];
@@ -861,7 +865,7 @@ function draw(){
     colorRect= 1
   }
 
-  background(100);
+  background(0);
 
 
 
@@ -1652,20 +1656,23 @@ fill(240)
   text("LOW GUESS", buttonX+30, 645)
   text("HIGH GUESS", buttonX+580, 645)
 
-  stroke(0,10)
+  stroke(100,10)
   line( buttonX+33,626, buttonX+638,626)
   line( buttonX+32,626, buttonX+32,86)
   line( buttonX+33,86, buttonX+638,86)
-  stroke(0,30)
+  stroke(50,30)
   line( buttonX+32,627, buttonX+638,627)
   line( buttonX+31,627, buttonX+31,85)
   line( buttonX+32,85, buttonX+638,85)
-  stroke(0,100)
+  stroke(100,100)
   line( buttonX+31,628, buttonX+638,628)
   line( buttonX+30,628, buttonX+30,84)
   line( buttonX+31,84, buttonX+638,84)
   stroke(255,100)
   line( buttonX+638,84, buttonX+638,628)
+  stroke(0,0)
+  fill(0)
+  rect(buttonX+638,40,1000,600)
 
   noStroke()
 
@@ -1675,7 +1682,7 @@ fill(240)
     push()
     translate(400,0)
     fill(0,200)
-    rect(-815,0,window.outerWidth, window.outerHeight)
+    rect(-2000,-1000,20000, 20000)
     fill(255)
     textSize(15)
     textStyle(BOLD)
@@ -1685,8 +1692,8 @@ fill(240)
     textAlign(LEFT)
     textSize(11)
 
-    text("It's really Simple, each box you see is a button. There are different buttons:", buttonX-300, 180)
-    text("These are the CATEGORIES, click on them to see", buttonX-250,220)
+    text("It's really Simple, each box you see is a button.", buttonX-300, 180)
+    text("CATEGORIES, click on them to see", buttonX-250,220)
     text("the average of the GUESSES for each OPTION", buttonX-250,235)
 
     text("These are the OPTIONS, click on them to see", buttonX-250,260)

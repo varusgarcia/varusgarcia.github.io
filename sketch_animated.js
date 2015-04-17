@@ -10,6 +10,7 @@ var guess4 =[567,400,800,650,700,477,380,900,330,450,320,950,600,2000,110,200,30
 var guess5 =[978,500,1500,1000,1000,683,800,1100,650,750,600,1800,1000,5000,175,500,500,350,1346,2000,600,1001,1000,3000,400,1000];
 var people = 26;
 
+var instructions = 100
 var colorRect = 1
 var count =0
 var infoButton =1;
@@ -1306,7 +1307,7 @@ fill(240)
 
   fill(0)
   textStyle(BOLD);
-  text("?",buttonX+2,660)
+  text("?",buttonX+2,661)
   textStyle(NORMAL)
 
   //////////Buttons/////////////
@@ -1687,28 +1688,38 @@ fill(240)
     textSize(15)
     textStyle(BOLD)
     textAlign(CENTER)
-    text("Instructions:", buttonX-200,140)
+    text("Instructions:", buttonX-200,140+instructions)
+    textAlign(LEFT)
+    text("Hey There!, wondering what this is all about?", buttonX-800, 140+instructions)
     textStyle(NORMAL)
     textAlign(LEFT)
+
+
     textSize(11)
+    text("well, it is a data visualisation project from the class Input-Output", buttonX-800,180+instructions)
+    text("at the Fh-Potsdam University (Germany) from the 2014/15 semester", buttonX-800,200+instructions)
 
-    text("It's really Simple, each box you see is a button.", buttonX-300, 180)
-    text("CATEGORIES, click on them to see", buttonX-250,220)
-    text("the average of the GUESSES for each OPTION", buttonX-250,235)
+    text("The data visualized in this project was collected from a form", buttonX-800, 220+instructions)
+    text("that showed five images with points on them. The participants", buttonX-800,240+instructions)
+    text("had to give a guess of how many points the could see.", buttonX-800,260+instructions)
 
-    text("These are the OPTIONS, click on them to see", buttonX-250,260)
-    text("the average of each of the five GUESSES", buttonX-250,275)
-    text("and the total average", buttonX-250,290)
+    text("It's really Simple, each box you see is a button.", buttonX-300, 180+instructions)
+    text("CATEGORIES, click on them to see", buttonX-250,220+instructions)
+    text("the average of the GUESSES for each OPTION", buttonX-250,235+instructions)
 
-    text("These are the GUESSES, click on them to see", buttonX-250,315)
-    text("the average GUESS for each OPTION ", buttonX-250,330)
-    text("and the total average", buttonX-250,345)
+    text("These are the OPTIONS, click on them to see", buttonX-250,260+instructions)
+    text("the average of each of the five GUESSES", buttonX-250,275+instructions)
+    text("and the total average", buttonX-250,290+instructions)
 
-    text("Click on this button to change color", buttonX-250,370)
+    text("These are the GUESSES, click on them to see", buttonX-250,315+instructions)
+    text("the average GUESS for each OPTION ", buttonX-250,330+instructions)
+    text("and the total average", buttonX-250,345+instructions)
 
-    text("Click on this button to come back to this screen", buttonX-250,395)
+    text("Click on this button to change color", buttonX-250,370+instructions)
+
+    text("Click on this button to come back to this screen", buttonX-250,395+instructions)
     fill(150)
-    rect(buttonX-270, 210,12,12)
+    rect(buttonX-270, 210+instructions,12,12)
 
     if (colorRect ===1){
       fill(131,21,24)
@@ -1719,7 +1730,7 @@ fill(240)
     if(colorRect ===3){
       fill(0, 103, 12)
     }
-    rect(buttonX-270, 250,12,12)
+    rect(buttonX-270, 250+instructions,12,12)
 
     if (colorRect ===1){
       fill(242,103,33)
@@ -1734,11 +1745,11 @@ fill(240)
     rect(buttonX-270, 305,12,12)
     noStroke()
     fill(255)
-    rect (buttonX -270, 386, thick, thick)
+    rect (buttonX -270, 386+instructions, thick, thick)
 
     fill(0)
     textStyle(BOLD);
-    text("?",buttonX+2-270,396)
+    text("?",buttonX+2-269,396+instructions)
     textStyle(NORMAL)
 
     textAlign(RIGHT)
@@ -1756,7 +1767,7 @@ fill(240)
 
 
 
-    rect(buttonX-270, 361, thick, 3)
+    rect(buttonX-270, 361+instructions, thick, 3)
 
     if (colorRect ===1){
       fill(160,28,32)
@@ -1769,7 +1780,7 @@ fill(240)
     }
 
 
-    rect(buttonX-270, 364, thick, 3)
+    rect(buttonX-270, 364+instructions, thick, 3)
 
     if (colorRect ===1){
       fill(189,52,38)
@@ -1782,7 +1793,7 @@ fill(240)
     }
 
 
-    rect(buttonX-270, 367, thick, 3)
+    rect(buttonX-270, 367+instructions, thick, 3)
 
     if (colorRect ===1){
       fill(217,69,38)
@@ -1795,7 +1806,7 @@ fill(240)
       fill(109,223,0)
     }
 
-    rect(buttonX-270, 370, thick, 3)
+    rect(buttonX-270, 370+instructions, thick, 3)
     pop()
     fill(255)
 
@@ -1938,9 +1949,11 @@ prevPrintTotal = goalPrintTotal
   else {
     buttonCounter= 0;
   }
+  if(mouseX - modWidth >= buttonX && mouseX - modWidth <= buttonX + thick){
   if ( mouseY - modHeight >= 650  && mouseY - modHeight <= 650  + thick  ){
     infoButton = 1;
   }
+}
   else{    infoButton = 0;}
   count = 0
 

@@ -1721,6 +1721,15 @@ fill(240)
     fill(150)
     rect(buttonX-270, 210+instructions,12,12)
 
+
+    rect(buttonX-800, 320+instructions,220,20)
+    rect(buttonX-800, 360+instructions,370,20)
+    fill(250)
+    textSize(15)
+    text("Here you can see the form", buttonX-790,335+instructions)
+    text("Check out all project of the Input-Output class", buttonX-790,375+instructions)
+
+
     if (colorRect ===1){
       fill(131,21,24)
     }
@@ -1742,14 +1751,15 @@ fill(240)
       fill(64,191,0)
     }
     stroke()
-    rect(buttonX-270, 305,12,12)
+    rect(buttonX-270, 305+instructions,12,12)
     noStroke()
     fill(255)
     rect (buttonX -270, 386+instructions, thick, thick)
 
     fill(0)
     textStyle(BOLD);
-    text("?",buttonX+2-269,396+instructions)
+    textSize(13)
+    text("?",buttonX+2-270,397+instructions)
     textStyle(NORMAL)
 
     textAlign(RIGHT)
@@ -1852,8 +1862,22 @@ prevPrintTotal = goalPrintTotal
 
 
 
+  if(mouseX - modWidth >= buttonX-800 && mouseX - modWidth <= buttonX-175 && infoButton ===1){
+        if( mouseY - modHeight >= 320+instructions  && mouseY - modHeight <= 320+instructions  + 20 ){
 
-  if(mouseX - modWidth >= buttonX && mouseX - modWidth <= buttonX + thick){
+          location.reload();location.href='https://docs.google.com/forms/d/1PAwjxJQz2l65CJPxiWn2zA7Dtr0jKwkhc1Q2Oo37FoQ/viewform'
+        }
+      }
+        if(mouseX - modWidth >= buttonX-800 && mouseX - modWidth <= buttonX-25 && infoButton ===1){
+
+        if( mouseY - modHeight >= 360+instructions  && mouseY - modHeight <= 360+instructions  + 20 ){
+
+          location.reload();location.href='https://interface.fh-potsdam.de/eingabe-ausgabe/2014-2015/'
+        }
+
+
+}
+  if(mouseX - modWidth >= buttonX && mouseX - modWidth <= buttonX + thick && infoButton === 0){
 
     if( mouseY - modHeight >= 70  && mouseY - modHeight <= 70  + thick ){
       buttonCounter = 70
@@ -1939,10 +1963,13 @@ prevPrintTotal = goalPrintTotal
     }
     else if( mouseY - modHeight >= 610  && mouseY - modHeight <= 610  + thick ){
       buttonCounter = 610
+
     }
     else if ( mouseY - modHeight >= 630  && mouseY - modHeight <= 630  + thick  ){
       colorRect = colorRect+1
+
     }
+
 
 
   }
@@ -1951,6 +1978,7 @@ prevPrintTotal = goalPrintTotal
   }
   if(mouseX - modWidth >= buttonX && mouseX - modWidth <= buttonX + thick){
   if ( mouseY - modHeight >= 650  && mouseY - modHeight <= 650  + thick  ){
+
     infoButton = 1;
   }
 }
